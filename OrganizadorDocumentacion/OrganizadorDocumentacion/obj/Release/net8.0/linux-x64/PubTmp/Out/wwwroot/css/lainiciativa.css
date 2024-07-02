@@ -1,0 +1,46 @@
+#contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#titulo {
+    text-align: center;
+}
+
+#ruta, #textoCantidad, #estadoCantidad {
+    display: inline-block;
+    margin: 5px 0;
+}
+
+#contenido button {
+    margin: 5px;
+}
+#tablaDocumentacion {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #tablaDocumentacion th, #tablaDocumentacion td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    #tablaDocumentacion th {
+        background-color: #f2f2f2;
+    }
+
+    #tablaDocumentacion tr:hover {
+        background-color: #f2f2f2;
+    }
+
+    #tablaDocumentacion td[colspan="5"] {
+        text-align: center;
+    }

@@ -1,0 +1,245 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\models\\iniciativa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\models\\iniciativa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\models\\subcampo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\models\\subcampo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\dtos\\iniciativadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\dtos\\iniciativadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\models\\iniciativaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\models\\iniciativaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\models\\archivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\models\\archivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\dtos\\subcampodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\dtos\\subcampodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\dtos\\campodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\dtos\\campodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\models\\usuarioiniciativa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\models\\usuarioiniciativa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|c:\\users\\dima\\source\\repos\\organizadordocumentacion\\organizadordocumentacion\\wwwroot\\js\\usuarios\\usuarios.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{ED5B1FDB-5C5C-420B-8CF0-E07ABB53C552}|OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj|solutionrelative:organizadordocumentacion\\wwwroot\\js\\usuarios\\usuarios.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T17:57:56.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Iniciativa.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Iniciativa.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Models\\Iniciativa.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Iniciativa.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Models\\Iniciativa.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T16:00:38.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Subcampo.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Subcampo.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Models\\Subcampo.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Subcampo.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Models\\Subcampo.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAewCsAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T18:57:34.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IniciativaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\DTOs\\IniciativaDTO.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\DTOs\\IniciativaDTO.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\DTOs\\IniciativaDTO.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\DTOs\\IniciativaDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T18:50:03.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IniciativaViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\IniciativaViewModel.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Models\\IniciativaViewModel.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\IniciativaViewModel.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Models\\IniciativaViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T19:52:45.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T15:33:42.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Archivo.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Archivo.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Models\\Archivo.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Archivo.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Models\\Archivo.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAiwA4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T19:23:30.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\Usuario.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Models\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T16:00:48.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SubcampoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\DTOs\\SubcampoDTO.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\DTOs\\SubcampoDTO.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\DTOs\\SubcampoDTO.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\DTOs\\SubcampoDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T10:01:37.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CampoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\DTOs\\CampoDTO.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\DTOs\\CampoDTO.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\DTOs\\CampoDTO.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\DTOs\\CampoDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T18:52:05.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UsuarioIniciativa.cs",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\UsuarioIniciativa.cs",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Models\\UsuarioIniciativa.cs",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Models\\UsuarioIniciativa.cs",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Models\\UsuarioIniciativa.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T16:00:49.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T15:33:37.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "OrganizadorDocumentacion\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T15:33:44.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "usuarios.js",
+              "DocumentMoniker": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\wwwroot\\js\\Usuarios\\usuarios.js",
+              "RelativeDocumentMoniker": "OrganizadorDocumentacion\\wwwroot\\js\\Usuarios\\usuarios.js",
+              "ToolTip": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\wwwroot\\js\\Usuarios\\usuarios.js",
+              "RelativeToolTip": "OrganizadorDocumentacion\\wwwroot\\js\\Usuarios\\usuarios.js",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T15:35:29.625Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

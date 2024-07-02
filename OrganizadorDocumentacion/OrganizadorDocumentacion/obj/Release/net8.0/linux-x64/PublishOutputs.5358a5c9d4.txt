@@ -1,0 +1,7 @@
+C:\Users\Dima\source\repos\OrganizadorDocumentacion\OrganizadorDocumentacion\obj\Release\net8.0\linux-x64\PubTmp\Out\OrganizadorDocumentacion
+C:\Users\Dima\source\repos\OrganizadorDocumentacion\OrganizadorDocumentacion\obj\Release\net8.0\linux-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\Dima\source\repos\OrganizadorDocumentacion\OrganizadorDocumentacion\obj\Release\net8.0\linux-x64\PubTmp\Out\appsettings.json
+C:\Users\Dima\source\repos\OrganizadorDocumentacion\OrganizadorDocumentacion\obj\Release\net8.0\linux-x64\PubTmp\Out\OrganizadorDocumentacion.dll
+C:\Users\Dima\source\repos\OrganizadorDocumentacion\OrganizadorDocumentacion\obj\Release\net8.0\linux-x64\PubTmp\Out\OrganizadorDocumentacion.deps.json
+C:\Users\Dima\source\repos\OrganizadorDocumentacion\OrganizadorDocumentacion\obj\Release\net8.0\linux-x64\PubTmp\Out\OrganizadorDocumentacion.runtimeconfig.json
+C:\Users\Dima\source\repos\OrganizadorDocumentacion\OrganizadorDocumentacion\obj\Release\net8.0\linux-x64\PubTmp\Out\OrganizadorDocumentacion.pdb

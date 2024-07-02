@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "J6ZN+Yc6xl2OUV4si4vxH4kmLKmwLhToJcvwGWgFaFO3PMmSqKBDQAjqae0rBEIM4lJHH56Fu699dqD1MuBOfg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dima\\source\\repos\\OrganizadorDocumentacion\\OrganizadorDocumentacion\\OrganizadorDocumentacion.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.2\\microsoft.netcore.app.host.linux-x64.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

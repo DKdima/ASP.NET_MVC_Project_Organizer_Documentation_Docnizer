@@ -1,0 +1,15 @@
+.formulario{
+    width:60%;
+    margin-left:0;
+}
+
+.campo {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.subcampo {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}

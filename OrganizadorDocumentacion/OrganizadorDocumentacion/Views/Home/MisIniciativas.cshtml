@@ -1,0 +1,330 @@
+@model IEnumerable<OrganizadorDocumentacion.Models.Iniciativa>
+
+@{
+    ViewData["Title"] = "MisIniciativas";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/misIniciativas.css" />
+    <style>
+        /* Botón Eliminar */
+        .btn-eliminarIniciativa {
+            background-color: #dc3545; /* Rojo */
+            color: #fff; /* Blanco */
+            border:none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-eliminarIniciativa:hover {
+            background-color: #c82333; /* Rojo más oscuro */
+        }
+
+        /* Estilos para el contenedor del buscador y filtro */
+        .container-buscar-filtrar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el campo de búsqueda */
+        #buscarNombre {
+            flex: 1; /* El campo de búsqueda ocupará todo el espacio disponible */
+            margin-right: 10px; /* Margen derecho entre el campo de búsqueda y el botón de búsqueda */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Estilos para el botón de búsqueda */
+        #btnBuscar {
+            padding: 8px 16px;
+            background-color: #007bff; /* Azul */
+            color: #fff; /* Blanco */
+            border: none;
+            border-radius: 4px;
+            margin-right:5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #btnBuscar:hover {
+            background-color: #0056b3; /* Azul más oscuro */
+        }
+
+        /* Estilos para el menú desplegable de filtro */
+        #ordenarPor {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Botones de Editar */
+        .btn-editarIniciativa{
+            background-color: #007bff; /* Azul */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 5px;
+            border-radius: 4px;
+        }
+
+        /* Botones  Eliminar */
+        .btn-eliminarIniciativa {
+            background-color: #DA0F14; /* rojo */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 5px;
+            border-radius: 4px;
+        }
+
+        .btn-editarIniciativa:hover, .btn-eliminarIniciativa:hover {
+            background-color: #0056b3; /* Azul más oscuro */
+        }
+
+        /* Estilos adicionales */
+        .containerCuerpo {
+            margin: 20px;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+    </style>
+    <title>Mis Iniciativas</title>
+</head>
+<body>
+    <div class="containerCuerpo">
+        <h1 class="text-center">Mis Iniciativas</h1>
+        <div class="mt-4 container-buttons">
+            <button type="button" class="btn btn-primary mr-2 btn-add" onclick="window.location.href='/Home/CrearIniciativa'">Crear Iniciativa</button>
+        </div>
+        <br />
+        <div class="container-buscar-filtrar">
+            <input type="text" id="buscarNombre" placeholder="Buscar por nombre">
+            <button type="button" id="btnBuscar">Buscar</button>
+            <select id="ordenarPor">
+                <option value="filtrar">Filtrar por:</option>
+                <option value="nombre-az">Ordenar por Nombre a - z</option>
+                <option value="nombre-za">Ordenar por Nombre z - a</option>
+                <option value="activos">No Iniciadas</option>
+                <option value="pendientes">Pendientes</option>
+                <option value="finalizados">Finalizadas</option>
+            </select>
+        </div>
+        <hr/>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre de la Iniciativa</th>
+                    <th class="text-right">Estado</th>
+                    <th class="text-right">Editar</th>
+                    <th class="text-right">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-body">
+                @foreach (var iniciativa in Model)
+                {
+                    <tr data-iniciativa-id="@iniciativa.IniciativaId" onclick="redirectToLaIniciativa(@iniciativa.IniciativaId)">
+                        <td>@iniciativa.Nombre</td>
+                        <td class="text-right" id="porcentaje_@iniciativa.IniciativaId"></td>
+                        <td class="text-right"><button class="btn-editarIniciativa" data-iniciativa-id="@iniciativa.IniciativaId">Editar</button></td>
+                        <td class="text-right"><button class="btn-eliminarIniciativa" data-iniciativa-id="@iniciativa.IniciativaId">Eliminar</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mi Script -->
+    <script src="~/js/misIniciativas.js" asp-append-version="true"></script>
+    <script>
+        function redirectToLaIniciativa(iniciativaId) {
+            // Verificar si el clic se realizó en el botón de eliminar
+            if (!event.target.classList.contains('btn-eliminarIniciativa')) {
+                // Redirigir a la página de LaIniciativa
+                window.location.href = '@Url.Action("LaIniciativa", "Home")' + '?id=' + iniciativaId;
+            }
+        }
+    </script>
+    @section scripts {
+        <script>
+            $(document).ready(function () {
+                // Iterar sobre cada fila de la tabla
+                $("#tabla-body tr").each(function () {
+                    // Obtener el ID de la iniciativa de la fila actual desde el atributo data-iniciativa-id
+                    var iniciativaId = $(this).data("iniciativa-id");
+
+                    // Depuración: Mostrar el ID de la iniciativa en la consola
+                    console.log("ID de la iniciativa:", iniciativaId);
+
+                    // Asegurarse de que iniciativaId no es nulo o undefined
+                    if (iniciativaId) {
+                        // Hacer la llamada AJAX para obtener los datos de cantidad de archivos
+                        $.ajax({
+                            url: "/Home/CalcularCantidadArchivos",
+                            method: "GET",
+                            data: { iniciativaId: iniciativaId },
+                            success: function (data) {
+                                // Convertir valores null a 0 antes de mostrarlos
+                                var sumaCantidadArchivos = data.sumaCantidadArchivos || 0;
+                                var cantidadActualArchivos = data.cantidadActualArchivos || 0;
+                                // Calcular el porcentaje
+                                var porcentaje = Math.floor((cantidadActualArchivos / sumaCantidadArchivos) * 100);
+
+                                // Verificar si el porcentaje es NaN y establecerlo en 0 si es así
+                                if (isNaN(porcentaje)) {
+                                    porcentaje = 0;
+                                }
+
+                                // Mostrar la suma de cantidad de archivos y la cantidad actual de archivos en las celdas correspondientes
+                                $("#porcentaje_" + iniciativaId).text(porcentaje + "%");
+                            },
+                            error: function () {
+                                // Manejar el error si la llamada AJAX falla
+                                console.error("Error al obtener los datos de cantidad de archivos.");
+                            }
+                        });
+                    } else {
+                        console.error("Error al obtener el ID de la iniciativa.");
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $(".btn-editarIniciativa").click(function (event) {
+                    event.stopPropagation(); // Para evitar que se dispare el redirectToLaIniciativa
+
+                    var iniciativaId = $(this).data("iniciativa-id");
+                    var currentRow = $(this).closest("tr");
+                    var currentNameCell = currentRow.find("td:first");
+                    var currentName = currentNameCell.text();
+
+                    // Mostrar un prompt para ingresar el nuevo nombre
+                    var newName = prompt("Ingrese el nuevo nombre para la iniciativa:", currentName);
+
+                    if (newName && newName.trim() !== "" && newName !== currentName) {
+                        // Realizar la solicitud de actualización
+                        $.ajax({
+                            url: "/Home/EditarIniciativaNombre",
+                            method: "POST",
+                            data: {
+                                iniciativaId: iniciativaId,
+                                nuevoNombre: newName
+                            },
+                            success: function (response) {
+                                // Actualizar el nombre en la tabla
+                                currentNameCell.text(newName);
+                            },
+                            error: function () {
+                                // Manejar el error si la solicitud falla
+                                alert("Error al actualizar el nombre de la iniciativa.");
+                            }
+                        });
+                    }
+                });
+
+                $(".btn-eliminarIniciativa").click(function (event) {
+                    event.stopPropagation(); // Para evitar que se dispare el redirectToLaIniciativa
+
+                    var iniciativaId = $(this).data("iniciativa-id");
+
+                    // Confirmar antes de eliminar
+                    if (confirm("¿Estás seguro de que deseas eliminar esta iniciativa?")) {
+                        // Realizar la solicitud de eliminación
+                        $.ajax({
+                            url: "/Home/EliminarIniciativa",
+                            method: "POST",
+                            data: { iniciativaId: iniciativaId },
+                            success: function (response) {
+                                // Recargar la página después de la eliminación
+                                location.reload();
+                            },
+                            error: function () {
+                                // Manejar el error si la solicitud falla
+                                alert("Error al eliminar la iniciativa.");
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                // Manejar el cambio en el select
+                $('#ordenarPor').on('change', function () {
+                    filtrarYOrdenar();
+                });
+
+                // Manejar el clic en el botón de búsqueda
+                $('#btnBuscar').on('click', function () {
+                    filtrarYOrdenar();
+                });
+
+                // Función para filtrar y ordenar
+                function filtrarYOrdenar() {
+                    var filtro = $('#ordenarPor').val();
+                    var nombreBusqueda = $('#buscarNombre').val().toLowerCase();
+                    var rows = $('#tabla-body tr').get();
+
+                    if (filtro === 'filtrar' && nombreBusqueda === '') {
+                        $('#tabla-body tr').show();
+                    } else {
+                        $('#tabla-body tr').each(function () {
+                            var nombre = $(this).find('td:first').text().toLowerCase();
+                            var porcentajeText = $(this).find('td:nth-child(2)').text();
+                            var porcentaje = parseInt(porcentajeText.replace('%', ''), 10);
+
+                            var mostrar = true;
+
+                            if (nombreBusqueda !== '' && !nombre.includes(nombreBusqueda)) {
+                                mostrar = false;
+                            }
+
+                            if (filtro === 'activos' && porcentaje !== 0) {
+                                mostrar = false;
+                            } else if (filtro === 'pendientes' && (porcentaje <= 0 || porcentaje >= 100)) {
+                                mostrar = false;
+                            } else if (filtro === 'finalizados' && porcentaje !== 100) {
+                                mostrar = false;
+                            }
+
+                            if (mostrar) {
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                        });
+
+                        if (filtro === 'nombre-az' || filtro === 'nombre-za') {
+                            rows.sort(function (a, b) {
+                                var keyA = $(a).find('td:first').text().toLowerCase();
+                                var keyB = $(b).find('td:first').text().toLowerCase();
+                                if (keyA < keyB) return filtro === 'nombre-az' ? -1 : 1;
+                                if (keyA > keyB) return filtro === 'nombre-az' ? 1 : -1;
+                                return 0;
+                            });
+                            $.each(rows, function (index, row) {
+                                $('#tabla-body').append(row);
+                            });
+                        }
+                    }
+                }
+            });
+        </script>
+    }
+
+</body>
+</html>

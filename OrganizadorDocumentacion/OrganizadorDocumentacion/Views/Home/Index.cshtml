@@ -1,0 +1,144 @@
+﻿@model IEnumerable<OrganizadorDocumentacion.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .container-buttons {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 40%;
+            margin: 0 auto; /* Esto centrará horizontalmente el contenedor */
+        }
+
+            .container-buttons button {
+                margin-right: 10px;
+                width: auto;
+                height: 40px;
+            }
+
+            .container-buttons hr {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+            .input-group label {
+                margin-bottom: 0;
+            }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Bienvenido/a a Ðocnizer su organizador de documentación en línea</h1>
+
+        <div class="mt-4 container-buttons">
+            <button type="button" class="btn btn-primary mr-2 btn-iniciar">Iniciar Sesión</button>
+            <button type="button" class="btn btn-secondary btn-subir">Subir Archivo</button>
+            <hr>
+
+            <div id="formularios">
+                <!-- Formulario de Usuario y Contraseña -->
+                <div id="formUsuario" style="display: none;">
+                    <form method="post" asp-action="Login" style="display:@(ViewBag.UsuarioId != null ? "none" : "block");">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <label for="Nombre" class="mr-2">Usuario:&nbsp;&nbsp;</label>
+                                <input type="text" class="form-control smaller-input" id="Nombre" name="Nombre">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <label for="Clave" class="mr-2">Contraseña:&nbsp;&nbsp;</label>
+                                <input type="password" class="form-control smaller-input" id="Clave" name="Clave">
+                            </div>
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-primary mr-2 btn-login">Log-In</button>
+                        <br /><br />
+                        @if (ViewBag.ErrorMessage != null)
+                        {
+                            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                        }
+                    </form>
+                </div>
+
+                <!-- Cuadro para subir archivo -->
+                <div id="cuadroSubir" style="display: none;">
+                    <form id="archivoForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <label for="usuario" class="mr-2">Inserte Ref:&nbsp;&nbsp;</label>
+                                <input type="text" class="form-control smaller-input" id="usuario">
+                            </div>
+                            <br />
+                            <div class="input-group" id="divArchivo">
+                                <button type="submit" class="btn btn-primary mr-2 btn-subir">Subir</button>
+                                <input type="file" id="archivo" class="form-control-file">
+                            </div>
+                            <div id="mensajeVerificado" style="color: green;"></div>
+                            <div id="mensajeNoVerificado" style="color: red;"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <!-- Mi Script -->
+    <script src="https://alcdn.msauth.net/browser/2.14.2/js/msal-browser.min.js"></script>
+    <script src="~/js/index-scripts.js" asp-append-version="true"></script>
+    <script>
+            // Mantener el formulario de inicio de sesión visible si hay un mensaje de error
+            document.addEventListener("DOMContentLoaded", function () {
+                var errorMessage = '@ViewBag.ErrorMessage';
+                if (errorMessage !== '') {
+                    document.getElementById("formUsuario").style.display = "block";
+                }
+
+            });
+
+
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Iterar sobre cada fila de la tabla
+            $("#tabla-body tr").each(function () {
+                // Obtener el ID de la iniciativa de la fila actual
+                var iniciativaId = $(this).data("id");
+
+                // Hacer la llamada AJAX para obtener los datos de cantidad de archivos
+                $.ajax({
+                    url: "/Home/CalcularCantidadArchivos",
+                    method: "GET",
+                    data: { iniciativaId: iniciativaId },
+                    success: function (data) {
+                        // Mostrar la suma de cantidad de archivos y la cantidad actual de archivos en las celdas correspondientes
+                        $("#sumaCantidadArchivos_" + iniciativaId).text(data.SumaCantidadArchivos);
+                        $("#cantidadActualArchivos_" + iniciativaId).text(data.CantidadActualArchivos);
+                    },
+                    error: function () {
+                        // Manejar el error si la llamada AJAX falla
+                        console.error("Error al obtener los datos de cantidad de archivos.");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>

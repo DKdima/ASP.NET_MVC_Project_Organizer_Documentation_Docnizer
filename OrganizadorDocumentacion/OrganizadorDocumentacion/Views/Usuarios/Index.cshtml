@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OrganizadorDocumentacion.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mis Usuarios</h1>
+
+<p>
+    <a asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clave)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoUsuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clave)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoUsuario)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.UsuarioId">Editar</a> |
+                <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.UsuarioId">Detalles</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.UsuarioId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

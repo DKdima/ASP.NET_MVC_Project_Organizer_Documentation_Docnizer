@@ -1,0 +1,18 @@
+.containerCuerpo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto; /* Esto centrará horizontalmente el contenedor */
+}
+/* Estilos para la disposición de las iniciativas y estados */
+.row {
+    margin-bottom: 20px;
+}
+
+/* Estilos para los botones */
+.container-buttons {
+    margin-top: 20px;
+}
+.text-right {
+    text-align: right;
+}

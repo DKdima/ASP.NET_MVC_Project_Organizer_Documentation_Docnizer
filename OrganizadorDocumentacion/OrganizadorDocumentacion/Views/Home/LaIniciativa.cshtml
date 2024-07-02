@@ -1,0 +1,625 @@
+@model OrganizadorDocumentacion.Models.Iniciativa
+@{
+    ViewData["Title"] = "La Iniciativa";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/lainiciativa.css" />
+    <style>
+        /* Estilos para el contenedor principal */
+        #contenedor {
+            max-width: 100%; /* Ancho máximo del contenedor */
+            margin: 0 auto; /* Centrar horizontalmente el contenedor */
+            padding: 20px; /* Espaciado interno */
+            border: 1px solid #ccc; /* Borde */
+            border-radius: 8px; /* Bordes redondeados */
+            background-color: #fff; /* Color de fondo */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+            text-align:center;
+        }
+
+        /* Estilos para el título */
+        #titulo {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Estilos para la ruta */
+        #ruta {
+            margin-bottom: 20px;
+        }
+
+            #ruta select {
+                padding: 8px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-right: 10px;
+            }
+
+        /* Estilos para el contenedor de cantidad de documentación */
+        #cantidadDocumentacionContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estilos para el contenedor de búsqueda y filtro */
+        #busquedaFiltroContainer {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilos para el input de búsqueda */
+        #buscarDocumento {
+            margin-right: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        /* Estilos para el contenedor de filtro de fecha */
+        .filtro-fecha {
+            display: flex;
+            align-items: center;
+        }
+
+            .filtro-fecha label {
+                margin-right: 5px;
+                font-weight: bold;
+            }
+
+            .filtro-fecha input {
+                margin-right: 10px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .filtro-fecha button {
+                padding: 8px 16px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+                .filtro-fecha button:hover {
+                    background-color: #0056b3;
+                }
+
+        /* Estilos para la tabla de documentación */
+        #tablaDocumentacion {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            #tablaDocumentacion th, #tablaDocumentacion td {
+                border: 1px solid #ccc;
+                padding: 8px;
+                text-align: left;
+            }
+
+            #tablaDocumentacion th {
+                background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+            }
+
+            #tablaDocumentacion tr:hover {
+                background-color: #f9f9f9; /* Color de fondo al pasar el ratón */
+            }
+
+            #tablaDocumentacion td[colspan="6"] {
+                text-align: center;
+            }
+
+        /* Estilos para los botones de acción */
+        .btn-subirDoc {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right:5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-subirDoc:hover {
+                background-color: #0056b3;
+            }
+
+        /* Estilos para los mensajes de éxito y error */
+        #mensajeSubido, #mensajeError {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align:left;
+        }
+
+        #editarCantidadBtn, #guardarCantidadBtn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+    <style>
+        /* Estilos para la tabla de documentación */
+        #tablaDocumentacion {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; /* Añadir margen superior */
+        }
+
+            #tablaDocumentacion th, #tablaDocumentacion td {
+                border: 1px solid #ccc; /* Borde de las celdas */
+                padding: 8px; /* Espaciado interno de las celdas */
+                text-align: left; /* Alinear texto a la izquierda */
+            }
+
+            #tablaDocumentacion th {
+                background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+                font-weight: bold; /* Texto en negrita para el encabezado */
+                text-transform: uppercase; /* Transformar texto a mayúsculas */
+            }
+
+            #tablaDocumentacion tr:nth-child(even) {
+                background-color: #f9f9f9; /* Fondo para filas pares */
+            }
+
+            #tablaDocumentacion tr:hover {
+                background-color: #f1f1f1; /* Fondo al pasar el ratón por encima */
+            }
+
+            #tablaDocumentacion td[colspan="6"] {
+                text-align: center; /* Centrar el texto cuando no hay documentos */
+                font-style: italic; /* Poner en cursiva el texto cuando no hay documentos */
+                color: #777; /* Color gris para el texto cuando no hay documentos */
+            }
+
+            /* Estilos para el enlace de descarga */
+            #tablaDocumentacion a {
+                color: #007bff; /* Color del enlace */
+                text-decoration: none; /* Sin subrayado */
+            }
+
+                #tablaDocumentacion a:hover {
+                    text-decoration: underline; /* Subrayado al pasar el ratón por encima */
+                }
+
+        /* Estilos para el botón de eliminar */
+        .btn-eliminar {
+            background-color: #dc3545; /* Color de fondo rojo */
+            color: #fff; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 4px; /* Bordes redondeados */
+            padding: 6px 12px; /* Espaciado interno del botón */
+            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+        }
+
+            .btn-eliminar:hover {
+                background-color: #c82333; /* Color de fondo rojo más oscuro al pasar el ratón por encima */
+            }
+    </style>
+
+</head>
+<body>
+    <div id="contenedor">
+        <h1 id="titulo">@Model.Nombre ref: <span id="refSeleccionado"></span></h1>
+
+        <div id="contenido">
+            <p id="ruta">
+                Ruta:
+                <select id="campoSelect">
+                    <option value="">Seleccione un campo</option>
+                    @foreach (var campo in Model.Campos)
+                    {
+                        <option value="@campo.CampoId">@campo.Nombre</option>
+                    }
+                </select>
+                <select id="subcampoSelect">
+                    <option value="">Seleccione un subcampo</option>
+                </select>
+            </p>
+            <hr>
+            <div>Cantidad de Documentación: <span id="cantidadActual"></span> / <span id="cantidadArchivos">0</span>
+                <button id="editarCantidadBtn">Editar</button>
+            </div>
+            <div id="editarCantidadContainer" style="display: none;">
+                <input type="number" id="nuevaCantidadArchivos" placeholder="Nueva cantidad de archivos">
+                <button id="guardarCantidadBtn">Guardar</button>
+            </div>
+           <br />
+            <div style="display: flex; align-items: center;">
+                <input type="text" id="buscarDocumento" placeholder="Buscar documento..." style="margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                <div class="filtro-fecha">
+                    <label for="fechaInicio">Fecha Inicio:</label>
+                    <input type="date" id="fechaInicio">
+                    <label for="fechaFin">Fecha Fin:</label>
+                    <input type="date" id="fechaFin">
+                    <button type="button" id="btnFiltrar">Filtrar</button>
+                </div>
+            </div>
+            <br />
+            <div class="input-group" id="divArchivo">
+                <button type="button" class="btn btn-primary mr-2 btn-subirDoc">Subir</button>
+                <input type="file" id="archivoDoc" class="form-control-file">
+            </div>
+            <div id="mensajeSubido" style="color: green;"></div>
+            <div id="mensajeError" style="color: red;"></div>
+            <br />
+            <table id="tablaDocumentacion">
+                <thead>
+                    <tr>
+                        <th>Fichero</th>
+                        <th>Fecha Modificación</th>
+                        <th>Autor</th>
+                        <th>Tamaño en Bytes</th>
+                        <th>Descargar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5">No hay documentos disponibles</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+        </div>
+    </div>
+
+    <script src="~/js/lainiciativa.js" asp-append-version="true"></script>
+    @section scripts {
+
+        <script>
+
+            $(function () {
+                $('#campoSelect').change(function () {
+                    $('#mensajeError').text('');
+                    $('#mensajeSubido').text('');
+                    var campoId = $(this).val();
+                    if (campoId) {
+                        $.ajax({
+                            url: '@Url.Action("GetSubcampos", "Home")',
+                            type: 'GET',
+                            data: { campoId: campoId },
+                            success: function (response) {
+                                // Limpiar las opciones anteriores sin eliminar la opción vacía
+                                $('#subcampoSelect').find('option:not(:first)').remove();
+                                // Agregar las nuevas opciones
+                                $.each(response, function (index, subcampo) {
+                                    $('#subcampoSelect').append($('<option></option>').val(subcampo.subcampoId).text(subcampo.nombre));
+                                });
+                                
+                            },
+                            error: function () {
+                                alert('Error al cargar los subcampos');
+                            }
+                        });
+                    } else {
+                        // Limpiar todas las opciones excepto la opción vacía
+                        $('#subcampoSelect').find('option:not(:first)').remove();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(function () {
+                // Filtrar documentos al hacer clic en el botón "Filtrar"
+                $('#btnFiltrar').click(function () {
+                    var textoBusqueda = $('#buscarDocumento').val().toLowerCase();
+                    var fechaInicio = $('#fechaInicio').val();
+                    var fechaFin = $('#fechaFin').val();
+
+                    $('#tablaDocumentacion tbody tr').each(function () {
+                        var fila = $(this);
+                        var nombreDocumento = fila.find('td').eq(0).text().toLowerCase();
+                        var fechaModificacion = fila.find('td').eq(1).text().split(' ')[0]; // Obtener solo la parte de la fecha (YYYY-MM-DD)
+                        var autor = fila.find('td').eq(2).text().toLowerCase();
+                        var tamano = fila.find('td').eq(3).text().toLowerCase();
+
+                        var mostrarFila = true;
+
+                        if (textoBusqueda && !(nombreDocumento.includes(textoBusqueda) || autor.includes(textoBusqueda) || tamano.includes(textoBusqueda))) {
+                            mostrarFila = false;
+                        }
+
+                        if (fechaInicio && fechaModificacion < fechaInicio) {
+                            mostrarFila = false;
+                        }
+
+                        if (fechaFin && fechaModificacion > fechaFin) {
+                            mostrarFila = false;
+                        }
+
+                        if (mostrarFila) {
+                            fila.show();
+                        } else {
+                            fila.hide();
+                        }
+                    });
+                });
+            });
+            </script>
+        <script>
+            $(function () {
+                // Inicializar la referencia como vacía
+                $('#refSeleccionado').text('');
+
+                // Llenar select de subcampos al seleccionar un campo
+                $('#campoSelect').change(function () {
+                    var campoId = $(this).val();
+                    obtenerRefCampo(campoId, null);
+                });
+
+                // Actualizar la referencia cuando se selecciona un subcampo
+                $('#subcampoSelect').change(function () {
+                    $('#mensajeError').text('');
+                    $('#mensajeSubido').text('');
+                    var subcampoId = $(this).val();
+                    if (subcampoId) {
+                        // Si se selecciona un subcampo, obtener la referencia del subcampo
+                        obtenerRefCampo(null, subcampoId);
+                    } else {
+                        // Si se selecciona "Seleccione un subcampo", obtener la referencia del campo
+                        var campoId = $('#campoSelect').val();
+                        obtenerRefCampo(campoId, null);
+                    }
+                });
+
+                // Función para obtener la referencia del campo o subcampo seleccionado
+                function obtenerRefCampo(campoId, subcampoId) {
+                    $.ajax({
+                        url: '@Url.Action("ObtenerRefCampo", "Home")',
+                        type: 'POST',
+                        data: { campoId: campoId, subcampoId: subcampoId },
+                        success: function (response) {
+                            $('#refSeleccionado').text(response);
+                        },
+                        error: function () {
+                        }
+                    });
+                }
+            });
+        </script>
+        <script>
+
+            $(function () {
+                // Llenar cantidad de archivos al seleccionar un campo
+                $('#campoSelect').change(function () {
+                    var campoId = $(this).val();
+                    obtenerCantidadArchivos(campoId, null);
+                });
+
+                // Actualizar la referencia cuando se selecciona un subcampo
+                $('#subcampoSelect').change(function () {
+                    var subcampoId = $(this).val();
+                    if (subcampoId) {
+                        // Si se selecciona un subcampo, obtener la referencia del subcampo
+                        obtenerCantidadArchivos(null, subcampoId);
+                    } else {
+                        // Si se selecciona "Seleccione un subcampo", obtener la referencia del campo
+                        var campoId = $('#campoSelect').val();
+                        obtenerCantidadArchivos(campoId, null);
+                    }
+                });
+
+                // Función para obtener la cantidad de archivos permitidos
+                function obtenerCantidadArchivos(campoId, subcampoId) {
+                    $.ajax({
+                        url: '@Url.Action("ObtenerCantidadArchivos", "Home")',
+                        type: 'POST',
+                        data: { campoId: campoId, subcampoId: subcampoId },
+                        success: function (response) {
+                            $('#cantidadArchivos').text(response);
+                        },
+                        error: function () {
+                            console.error("Error al obtener la cantidad de archivos.");
+                        }
+                    });
+                }
+
+                // Mostrar el contenedor de edición
+                $('#editarCantidadBtn').click(function () {
+                    $('#editarCantidadContainer').toggle(); // Alternar la visibilidad del contenedor de edición
+                });
+
+                // Guardar la nueva cantidad de archivos
+                $('#guardarCantidadBtn').click(function () {
+                    var nuevaCantidad = $('#nuevaCantidadArchivos').val();
+                    var campoId = $('#campoSelect').val();
+                    var subcampoId = $('#subcampoSelect').val();
+
+                    $.ajax({
+                        url: '@Url.Action("ActualizarCantidadArchivos", "Home")',
+                        type: 'POST',
+                        data: { campoId: campoId, subcampoId: subcampoId, nuevaCantidad: nuevaCantidad },
+                        success: function (response) {
+                            if (response.success) {
+                                $('#cantidadArchivos').text(nuevaCantidad);
+                                $('#editarCantidadContainer').hide();
+                            } else {
+                                console.error("Error al actualizar la cantidad de archivos.");
+                            }
+                        },
+                        error: function () {
+                            console.error("Error en la solicitud de actualización.");
+                        }
+                    });
+                });
+
+                // Llenar cantidad de archivos inicialmente
+                obtenerCantidadArchivos(null, null);
+            });
+
+        </script>
+
+          <script>
+            $(function () {
+                function obtenerArchivos(campoId, subcampoId) {
+                    $.ajax({
+                        url: '@Url.Action("ObtenerArchivos", "Home")',
+                        type: 'POST',
+                        data: { campoId: campoId, subcampoId: subcampoId },
+                        success: function (response) {
+                            console.log("Datos recibidos:", response);
+                            $('#tablaDocumentacion tbody').empty();
+                            $('#cantidadActual').text('0');
+
+                            if (response.length === 0) {
+                                var fila = '<tr>' +
+                                    '<td colspan="6">No hay documentos disponibles</td>' +
+                                    '</tr>';
+                                $('#tablaDocumentacion tbody').append(fila);
+                            } else {
+                                // Ordenar los archivos por fecha de modificación de más reciente a más antiguo
+                                response.sort(function (a, b) {
+                                    return new Date(b.fechaModificacion) - new Date(a.fechaModificacion);
+                                });
+                                $.each(response, function (index, archivo) {
+                                    // Dividir el nombre del archivo usando el guion bajo como separador
+                                    var partesNombre = archivo.nombre.split('_');
+
+                                    // El nombre original del archivo es la parte después del primer guion bajo
+                                    var nombreOriginal = partesNombre.slice(1).join('_');
+                                    var fila = '<tr>' +
+                                        '<td>' + nombreOriginal + '</td>' +
+                                        '<td>' + archivo.fechaModificacion + '</td>' +
+                                        '<td>' + archivo.autor + '</td>' +
+                                        '<td>' + archivo.tamano + '</td>' +
+                                        '<td><a href="@Url.Action("DescargarArchivo", "Home")?nombreArchivo=' + archivo.nombre + '">Descargar</a></td>'+
+                                        '<td><button class="btn-eliminar" data-nombre="' + archivo.nombre + '">Eliminar</button></td>' +
+                                        '</tr>';
+                                    $('#tablaDocumentacion tbody').append(fila);
+                                });
+
+                                // Actualizar el número de archivos disponibles
+                                $('#cantidadActual').text(response.length);
+
+                                $('.btn-eliminar').click(function () {
+                                    var nombre = $(this).data('nombre');
+                                    eliminarArchivo(nombre);
+                                });
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            console.log(jqXHR, textStatus, errorThrown);
+                        }
+                    });
+                }
+
+                function descargarArchivo(nombreArchivo) {
+                    // Crear un elemento <a> para descargar el archivo
+                    var link = document.createElement('a');
+                    link.href = '@Url.Action("DescargarArchivo", "Home")?nombreArchivo=' + nombreArchivo;
+                    link.download = nombreArchivo;
+
+                    // Simular un clic en el enlace para iniciar la descarga
+                    document.body.appendChild(link);
+                    link.click();
+
+                    // Eliminar el elemento <a> después de la descarga
+                    document.body.removeChild(link);
+                }
+
+
+                function eliminarArchivo(nombre) {
+                    $.ajax({
+                        url: '@Url.Action("EliminarArchivo", "Home")',
+                        type: 'POST',
+                        data: { nombre: nombre },
+                        success: function (response) {
+                            if (response.success) {
+                                var campoId = $('#campoSelect').val();
+                                var subcampoId = $('#subcampoSelect').val();
+                                obtenerArchivos(campoId, subcampoId);
+                            } else {
+                                console.log('Error al eliminar el archivo: ' + response.message);
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            console.log(jqXHR, textStatus, errorThrown);
+                        }
+                    });
+                }
+
+
+                $('.btn-subirDoc').click(function () {
+                    var archivo = $('#archivoDoc')[0].files[0];
+                    var autor = $('#autorDoc').val();
+                    var campoId = $('#campoSelect').val();
+                    var subcampoId = $('#subcampoSelect').val();
+
+                    // Obtener el número actual de archivos
+                    var cantidadActual = parseInt($('#cantidadActual').text());
+                    // Obtener la cantidad máxima de archivos permitidos
+                    var cantidadMaxima = parseInt($('#cantidadArchivos').text());
+
+                    // Verificar si el número actual de archivos es mayor que 0
+                    // y si es igual o menor que la cantidad máxima permitida
+                    if (cantidadMaxima > 0 && cantidadActual < cantidadMaxima) {
+                        var formData = new FormData();
+                        formData.append('archivo', archivo);
+                        formData.append('autor', autor);
+                        formData.append('campoId', campoId);
+                        formData.append('subcampoId', subcampoId);
+
+                        $.ajax({
+                            url: '@Url.Action("SubirArchivo", "Home")',
+                            type: 'POST',
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            success: function (response) {
+                                $('#mensajeError').text('');
+                                $('#mensajeSubido').text('Archivo subido correctamente.');
+                                obtenerArchivos(campoId, subcampoId);
+                                $('#archivoDoc').val('');
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                $('#mensajeError').text('Archivo no seleccionado.');
+                                console.log(jqXHR, textStatus, errorThrown);
+                            }
+                        });
+                    } else {
+                        $('#mensajeSubido').text('');
+                        $('#mensajeError').text('No se puede subir más archivos aquí');
+                    }
+                });
+
+
+ 
+                $('#campoSelect').change(function () {
+                    var campoId = $(this).val();
+                    obtenerArchivos(campoId, null);
+                });
+
+                // Actualizar cuando se selecciona un subcampo
+                $('#subcampoSelect').change(function () {
+                    var subcampoId = $(this).val();
+                    if (subcampoId) {
+                        // Si se selecciona un subcampo, obtener  subcampo
+                        obtenerArchivos(null, subcampoId);
+                    } else {
+                        // Si se selecciona "Seleccione un subcampo", obtener campo
+                        var campoId = $('#campoSelect').val();
+                       obtenerArchivos(campoId, null);
+                    }
+                });
+
+                obtenerArchivos(null, null);
+            });
+
+    </script>
+
+    }
+</body>
+</html>
